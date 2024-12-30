@@ -18,7 +18,7 @@ npm install
 
 Create a .env file in the root of the project and add your OpenAI API key:
 ```
-OPEN_AI_KEY=your-openai-api-key
+VITE_OPEN_AI_KEY=your-openai-api-key
 ```
 Replace your-openai-api-key with your actual OpenAI API key.
 
