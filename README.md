@@ -1,51 +1,34 @@
+# Image Generator App
 
-# React + TypeScript + Vite
+This React-based application allows users to generate images from text prompts using OpenAI's DALL-E model. Users can view their generated images and track their prompt history. Each user has a unique ID and a separate history of generated images.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- **Generate Images**: Enter a prompt to generate an image using OpenAI's DALL-E API.
+- **User-Specific History**: Each user has a unique ID stored in the browser's local storage. All generated images are saved in the history for that specific user.
+- **History Page**: View the history of generated images, including the prompt used and the creation date.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+Ensure you have **Node.js** (version 22 or higher) and **npm** installed. Install all the required packages by running the following command in your project directory:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Create a .env file in the root of the project and add your OpenAI API key:
 ```
+OPEN_AI_KEY=your-openai-api-key
+```
+Replace your-openai-api-key with your actual OpenAI API key.
+
+Start the development server by running:
+
+```bash
+npm run dev
+```
+
+Open your browser and go to http://localhost:5173/ to start using the app.
+
+## Usage
+Enter a prompt (e.g., "a white siamese cat") in the input field and click Submit to generate an image. The generated image will appear below the input form. After generating an image, click on the History link to see your prompt history, including the generated images, their prompts, and creation dates.
