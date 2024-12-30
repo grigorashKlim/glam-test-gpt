@@ -1,16 +1,16 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import MainPage from './components/MainPage';
 import HistoryPage from './components/HistoryPage';
+import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 
 const App = () => {
     return (
         <div className={'main-wrapper'}>
-            <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Router>
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/user/:userId" element={<HistoryPage />} />
                 </Routes>
-            </BrowserRouter>
+            </Router>
         </div>
     );
 };
